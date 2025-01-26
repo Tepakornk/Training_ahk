@@ -84,10 +84,12 @@ fc_testif(parm,rama){
 fc_TestArray(){
     ; Training[2]
     veg := ["Asparagus", "Broccoli", "Cucumber"]
-    OutputDebug, veg.Length . `n
+    OutputDebug,% veg.Length()
     RemovedValue := veg.Pop() 
     MsgBox, % RemovedValue
-    OutputDebug, % veg.Length
+    OutputDebug, % RemovedValue
+    x := veg.MaxIndex()
+    OutputDebug, % x
 }
 
 ; The variable
