@@ -3,12 +3,12 @@
 ;     fc_testFor(){
 ;         veg := ["Asparagus", "Broccoli", "Cucumber"]
 ;         for n in veg
-;             if MsgBox("#" A_Index " = " n "`nContinue?",, "y/n") = "No"
+;             if MsgBox,("#" A_Index " = " n "`nContinue?",, "y/n") = "No"
 ;             break
 ;     }
 ; }
 
-msgbox "Start" ,, "ok T3"
+MsgBox, "Start" ,, "ok T3"
 
 ; Training:=[]
 ; Training.push(fc_Testloop()) 
@@ -28,12 +28,12 @@ ExitApp
 
 ; The loop
 fc_Testloop(){
-    MsgBox("Test loop",)
+    MsgBox,,("Test loop",)
 
     veg := ["Asparagus", "Broccoli", "Cucumber"]
     Loop veg.Length
     {
-        MsgBox veg[A_Index]
+        MsgBox, veg[A_Index]
         OutputDebug veg[2] . a_index
 
     }
@@ -50,20 +50,20 @@ var :=0
 
 }
 
-fc_testnestfunction(){
-    timertest() {
-        x := "tock!"
-        tick() {
-            MsgBox x ; x causes this to become a closure.
-            SetTimer tick, 0 ; Using the closure's original var is safe.
-            ; SetTimer t, 0    ; Capturing t would create a reference cycle.
-        }
-        t := tick ; This is okay because t isn't captured above.
-        SetTimer t, 1000
-    }
+; fc_testnestfunction(){
+;     timertest() {
+;         x := "tock!"
+;         tick() {
+;             MsgBox, x ; x causes this to become a closure.
+;             SetTimer tick, 0 ; Using the closure's original var is safe.
+;             ; SetTimer t, 0    ; Capturing t would create a reference cycle.
+;         }
+;         t := tick ; This is okay because t isn't captured above.
+;         SetTimer t, 1000
+;     }
 
-    timertest()
-}
+;     timertest()
+; }
 
 ; The If
 fc_testif(parm,rama){
@@ -86,8 +86,8 @@ fc_TestArray(){
     veg := ["Asparagus", "Broccoli", "Cucumber"]
     OutputDebug, veg.Length . `n
     RemovedValue := veg.Pop() 
-    MsgBox (RemovedValue)
-    OutputDebug veg.Length
+    MsgBox, % RemovedValue
+    OutputDebug, % veg.Length
 }
 
 ; The variable
@@ -96,7 +96,7 @@ fc_TestArray(){
 fc_testFor(){
     veg := ["Asparagus", "Broccoli", "Cucumber"]
     for n in veg
-       ; if MsgBox,"#" A_Index " = " n "`nContinue?",, "y/n") = "No"
+       ; if MsgBox,,"#" A_Index " = " n "`nContinue?",, "y/n") = "No"
         break
 }
 
@@ -112,7 +112,7 @@ class Person {
 
     ; Method to display information
     ShowInfo() {
-       ; MsgBox "Name:" this.name `"nAge:" this.age
+       ; MsgBox, "Name:" this.name `"nAge:" this.age
     }
 }
 
@@ -126,16 +126,16 @@ class Person2 {
 
     ; Method to display information
     ShowInfo() {
-       ; MsgBox("Name: " . this.name . "`nAge: " . this.age)
+       ; MsgBox,("Name: " . this.name . "`nAge: " . this.age)
     }
 }
 
 fc_testclass(){
-    ; Create an instance of the class
-    personv := Person2("John Doe", 30)
+    ; ; Create an instance of the class
+    ; personv := Person2("John Doe", 30)
 
-    ; Call the method
-    personv.ShowInfo()
+    ; ; Call the method
+    ; personv.ShowInfo()
 }
 
 fc_log(){
