@@ -96,7 +96,7 @@ fc_TestArray(){
 fc_testFor(){
     veg := ["Asparagus", "Broccoli", "Cucumber"]
     for n in veg
-        if MsgBox("#" A_Index " = " n "`nContinue?",, "y/n") = "No"
+       ; if MsgBox,"#" A_Index " = " n "`nContinue?",, "y/n") = "No"
         break
 }
 
@@ -112,7 +112,7 @@ class Person {
 
     ; Method to display information
     ShowInfo() {
-        MsgBox "Name:" this.name `"nAge:" this.age
+       ; MsgBox "Name:" this.name `"nAge:" this.age
     }
 }
 
@@ -126,7 +126,7 @@ class Person2 {
 
     ; Method to display information
     ShowInfo() {
-        MsgBox("Name: " . this.name . "`nAge: " . this.age)
+       ; MsgBox("Name: " . this.name . "`nAge: " . this.age)
     }
 }
 
