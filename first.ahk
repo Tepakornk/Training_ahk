@@ -19,9 +19,9 @@ msgbox "Start" ,, "ok T3"
 ;Training2 := [Func("fc_Testloop"), Func("fc_testwhile"), Func("fc_testclass")]
 in1 := false
 in2 := false
-fc_testif(in1,in2)
+;fc_testif(in1,in2)
 ; Training[2]
-;fc_TestArray()
+fc_TestArray()
 ;fc_testwhile(3)
 
 ExitApp
@@ -84,7 +84,7 @@ fc_testif(parm,rama){
 fc_TestArray(){
     ; Training[2]
     veg := ["Asparagus", "Broccoli", "Cucumber"]
-    OutputDebug veg.Length
+    OutputDebug, veg.Length . `n
     RemovedValue := veg.Pop() 
     MsgBox (RemovedValue)
     OutputDebug veg.Length
