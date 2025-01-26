@@ -8,7 +8,7 @@
 ;     }
 ; }
 
-msgbox "Start" ,, "ok"
+msgbox "Start" ,, "ok T3"
 
 ; Training:=[]
 ; Training.push(fc_Testloop()) 
