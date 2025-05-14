@@ -1,1 +1,10 @@
-v2
+sleep(1000)
+select := false
+if(select){
+
+msgbox("Laos")
+}else{
+msgbox("Thailand")
+msgbox("Malaysia")
+}
+exit
